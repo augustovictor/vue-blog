@@ -76,7 +76,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import api from '../api'
 
 export default {
     data() {
@@ -108,7 +108,7 @@ export default {
             });
         },
         submitPostWithAxios: function() {
-            axios.post('https://jsonplaceholder.typicode.com/posts', {
+            api.post('/posts', {
                 title: this.post.title,
                 body: this.post.content
             }).then(data => {

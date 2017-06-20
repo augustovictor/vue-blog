@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import api from '../api'
 
 export default {
     data() {
@@ -27,9 +27,9 @@ export default {
         }
     },
     created() {
-        axios.get('https://jsonplaceholder.typicode.com/posts')
+        api.get('/posts')
         .then(res => {
-            this.posts = res.data.slice(0, 10);
+            this.posts = res.data.slice(0, 20);
         }).catch(err => {
             this.errorPresent = true;
             this.errors = err;

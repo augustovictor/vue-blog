@@ -1,6 +1,6 @@
 <template>
     <div>
-        <new-post v-if="false"></new-post>
+        <new-post></new-post>
         <index-post></index-post>
         <back-to-top></back-to-top>
     </div>
