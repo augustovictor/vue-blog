@@ -12,7 +12,7 @@
         </div>
         
         <div v-theme:columns="'narrow'" v-for="post in filteredPosts" class="post-container">
-            <h2 v-rainbow>{{post.title | toUppercase}}</h2>
+            <router-link :to="`/posts/${post.id}`"><h2 v-rainbow>{{post.title | toUppercase}}</h2></router-link>
             <p>{{post.body | snippet}}</p>
             <p>Id: {{post.id}}</p>
         </div>
