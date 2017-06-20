@@ -1,5 +1,9 @@
 <template>
     <div id="new-post-container">
+        <div v-if="errorPresent">
+            <h3>Something went wrong</h3>
+            {{errors}}
+        </div>
         <div v-if="!submitted" id="form-container">
             <h2>Add a new post</h2>
             <form>
@@ -65,12 +69,15 @@
         </div>
         
         <div v-if="!submitted">
-            <button @click.prevent="submitPost">Create post</button>
+            <!-- <button @click.prevent="submitPost">Create post</button> -->
+            <button @click.prevent="submitPostWithAxios">Create post</button>
         </div>
     </div>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
     data() {
         return {
@@ -85,7 +92,9 @@ export default {
                 categories: [],
                 author    : null
             },
-            submitted: false
+            submitted: false,
+            errorPresent: false,
+            errors: null
         }
     },
     methods: {
@@ -96,6 +105,19 @@ export default {
             }).then((data) => {
                 console.log(data);
                 this.submitted = true;
+            });
+        },
+        submitPostWithAxios: function() {
+            axios.post('https://jsonplaceholder.typicode.com/posts', {
+                title: this.post.title,
+                body: this.post.content
+            }).then(data => {
+                console.log(data);
+                this.submitted = true;
+            }).catch(err => {
+                this.errorPresent = true;
+                this.errors = err;
+                console.log('Something went wrong')
             });
         }
     }
