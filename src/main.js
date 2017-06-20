@@ -28,7 +28,17 @@ Vue.directive('theme', {
             el.style.maxWidth = '30%';
         }
     }
-})
+});
+
+// Custom filters
+Vue.filter('to-uppercase', (value) => {
+    // value = the value passed to the filter
+    return value.toUpperCase();
+});
+
+Vue.filter('snippet', (value) => {
+    return value.slice(0, 100) + '...';
+});
 
 new Vue({
   el: '#app',

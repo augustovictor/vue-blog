@@ -8,8 +8,8 @@
         </div>
         
         <div v-theme:columns="'narrow'" v-for="post in posts" class="post-container">
-            <h2 v-rainbow>{{post.title}}</h2>
-            <p>{{post.body}}</p>
+            <h2 v-rainbow>{{post.title | to-uppercase}}</h2>
+            <p>{{post.body | snippet}}</p>
             <p>Id: {{post.id}}</p>
         </div>
     </div>
