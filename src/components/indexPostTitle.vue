@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import api from '../api'
+import { api } from '../api'
 import searchMixin from '../mixins/searchMixin'
 
 export default {
