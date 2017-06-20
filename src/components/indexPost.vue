@@ -12,7 +12,7 @@
         </div>
         
         <div v-theme:columns="'narrow'" v-for="post in filteredPosts" class="post-container">
-            <h2 v-rainbow>{{post.title | to-uppercase}}</h2>
+            <h2 v-rainbow>{{post.title | toUppercase}}</h2>
             <p>{{post.body | snippet}}</p>
             <p>Id: {{post.id}}</p>
         </div>
@@ -46,6 +46,19 @@ export default {
             this.errorPresent = true;
             this.errors = err;
         });
+    },
+    filters: {
+        toUppercase (value) {
+            // value = the value passed to the filter
+            return value.toUpperCase();
+        }
+    },
+    directives: {
+        'rainbow': {
+            bind(el, binding, vnode) {
+                el.style.color = `#${Math.random().toString().slice(2,8)}`
+            }
+        }
     }
 }
 </script>

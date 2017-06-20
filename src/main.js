@@ -6,14 +6,16 @@ import BackToTop from 'vue-backtotop'
 Vue.use(VueResource);
 Vue.use(BackToTop);
 
-// Custom directives
-Vue.directive('rainbow', {
-    bind(el, binding, vnode) {
-        //binding = arguments passed
-        // vnode = virtual node
-        el.style.color = `#${Math.random().toString().slice(2,8)}`
-    }
-});
+// Custom global directives
+
+// Registered locally in indexPost.vue
+//Vue.directive('rainbow', {
+//    bind(el, binding, vnode) {
+//        //binding = arguments passed
+//        // vnode = virtual node
+//        el.style.color = `#${Math.random().toString().slice(2,8)}`
+//    }
+//});
 
 Vue.directive('theme', {
     bind(el, binding, vnode) {
@@ -30,11 +32,13 @@ Vue.directive('theme', {
     }
 });
 
-// Custom filters
-Vue.filter('to-uppercase', (value) => {
+// Custom global filters
+
+// Registered locally in indexPost.vue
+//Vue.filter('to-uppercase', (value) => {
     // value = the value passed to the filter
-    return value.toUpperCase();
-});
+    //return value.toUpperCase();
+//});
 
 Vue.filter('snippet', (value) => {
     return value.slice(0, 100) + '...';
