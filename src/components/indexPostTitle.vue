@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <h3>Posts</h3>
+    <div id="index-post-title-container">
+        <h3>Post titles</h3>
 
         <div id="search-container">
             <input v-model="search" type="text" placeholder="search for a post...">
@@ -11,10 +11,8 @@
             {{errors}}
         </div>
         
-        <div v-theme:columns="'narrow'" v-for="post in filteredPosts" class="post-container">
+        <div v-theme="'wide'" v-for="post in filteredPosts" class="post-container">
             <h2 v-rainbow>{{post.title | toUppercase}}</h2>
-            <p>{{post.body | snippet}}</p>
-            <p>Id: {{post.id}}</p>
         </div>
     </div>
 </template>
@@ -64,6 +62,10 @@ export default {
 </script>
 
 <style scoped>
+#index-post-title-container {
+    clear: both;
+}
+
 .post-container {
     background: lightgray;
     padding: 10px;
