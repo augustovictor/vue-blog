@@ -10,7 +10,8 @@ Vue.use(VueRouter);
 Vue.use(BackToTop);
 
 const router = new VueRouter({
-    routes: Routes
+    routes: Routes,
+    mode: 'history' // 'hash' is the default. And in order to avoid the # in the url in production you should setup the server in a way to redirect all the requests to the index.html
 });
 
 // Custom global directives
