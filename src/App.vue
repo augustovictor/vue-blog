@@ -1,9 +1,10 @@
 <template>
     <div>
-        <new-post></new-post>
-        <index-post></index-post>
-        <index-post-title></index-post-title>
-        <back-to-top></back-to-top>
+        <router-view></router-view>
+        <!-- <new-post></new-post> -->
+        <!-- <index-post></index-post> -->
+        <!-- <index-post-title></index-post-title> -->
+        <!-- <back-to-top></back-to-top> -->
     </div>
 </template>
 
