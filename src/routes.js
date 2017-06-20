@@ -3,7 +3,7 @@ import postIndexTitle from './components/indexPostTitle.vue'
 import newPost from './components/newPost.vue'
 import showPost from './components/showPost.vue'
 
-import moviesIndex from './components/moviesIndex.vue'
+import moviesIndex from './components/movies/index.vue'
 
 export default [
     {path: '/', component: postIndexTitle},

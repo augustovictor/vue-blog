@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import {apiMovies} from '../api'
+import {apiMovies} from '../../api'
 
 export default {
     data() {
