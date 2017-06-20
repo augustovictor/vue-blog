@@ -7,8 +7,8 @@
             {{errors}}
         </div>
         
-        <div v-for="post in posts" class="post-container">
-            <p>{{post.title}}</p>
+        <div v-theme:columns="'narrow'" v-for="post in posts" class="post-container">
+            <h2 v-rainbow>{{post.title}}</h2>
             <p>{{post.body}}</p>
             <p>Id: {{post.id}}</p>
         </div>
